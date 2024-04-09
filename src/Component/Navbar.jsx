@@ -98,7 +98,7 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-5 -mr-4 z-[1] p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"
+                    className="menu menu-sm dropdown-content mt-5 -mr-4 z-[100] p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"
                   >
                     <li className="text-[#023222] text-center text-xl font-semibold">
                       {catchUp && catchUp.displayName}

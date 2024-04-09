@@ -9,20 +9,22 @@ import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const allData = useLoaderData();
-  console.log(allData)
+  console.log(allData);
   return (
     <div>
       <div className="bg"></div>
       <div className="bg-slate-100 pb-12">
         <Slider></Slider>
-        <div className="lg:mt-16 mt-8 grid lg:grid-cols-3 grid-cols-1 gap-6">
-          {
-            allData.map((data) => <Bed key={data.id} data={data}></Bed> )
-          }
-          
+        <div>
+          <h1 className="text-center text-4xl font-semibold mt-16 underline">Bed Room</h1>
+          <div className="lg:mt-16 mt-8 grid lg:grid-cols-3 grid-cols-1 gap-6">
+            {allData.map((data) => (
+              <Bed key={data.id} data={data}></Bed>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-full h-[700px] flex justify-center items-center">
         <Food></Food>
       </div>
     </div>

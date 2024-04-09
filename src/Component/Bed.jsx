@@ -40,7 +40,7 @@ const Bed = ({ data }) => {
           </div>
           <h2 className="text-2xl font-bold">{hotel_title}</h2>
           <h2 className="text-xl font-bold">{Speciality_name}</h2>
-          <p className="font-medium text-[#023222]">Price : {price}</p>
+          <p className="font-medium text-[#023222]"> <span className="text-2xl">Price : {price}/</span>night</p>
           <div className="flex items-center justify-between text-[#023222] font-medium pt-6 border-t border-dashed">
             <p>Location : {location}</p>
             <Link to={catchUp ? `/data/${id}` : '/login'}><button className="btn bg-[#023222] text-white hover:bg-white border-2 hover:border-[#023222] hover:text-[#023222]">{button}</button></Link>
