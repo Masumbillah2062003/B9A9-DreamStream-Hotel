@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from 'react-hot-toast';
+import './style/login.css'
 
 
 const Register = () => {
@@ -49,12 +50,12 @@ const Register = () => {
   }
   return (
     <div>
-      <div className="hero">
-        <div className="mt-5">
+      <div className="hero logbg">
+        <div className="">
           <div className="text-center ">
             <h1 className="text-5xl font-bold">Register</h1>
           </div>
-          <div className="card mt-9 lg:w-[500px] border-2 border-[#023222]  shadow-2xl bg-base-100">
+          <div className="card mt-9 lg:w-[500px] border-2 border-[#023222]  shadow-2xl bg-transparent backdrop-blur-sm">
             <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
