@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const Bed_Details = () => {
   const data = useLoaderData();
@@ -62,7 +62,7 @@ const Bed_Details = () => {
         </div>
         <p className="lg:text-xl text-xl font-medium py-5"><span className="text-2xl">Price : {price}/</span>night</p>
         <div className="flex gap-5   font-semibold text-lg">
-          <button className="btn hover:bg-transparent">{button}</button>
+          <Link to="/"><button className="btn hover:bg-[#023222] bg-[#023222] text-white">{button}</button></Link>
         </div>
       </div>
     </div>

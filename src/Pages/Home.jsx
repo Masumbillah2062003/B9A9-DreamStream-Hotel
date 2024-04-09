@@ -14,7 +14,8 @@ const Home = () => {
     <div>
       <div className="bg"></div>
       <div className="bg-slate-100 pb-12">
-        <Slider></Slider>
+        <Slider>
+        </Slider>
         <div>
           <h1 className="text-center text-4xl font-semibold mt-16 underline">Bed Room</h1>
           <div className="lg:mt-16 mt-8 grid lg:grid-cols-3 grid-cols-1 gap-6">
