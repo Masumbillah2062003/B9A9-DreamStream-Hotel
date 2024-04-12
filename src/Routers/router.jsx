@@ -7,6 +7,7 @@ import Bed_Details from "../Component/Bed_Details";
 import My_Information from "../Component/My_Information";
 import PrivateRoute from "./PrivateRoute";
 import ErrorControl from "../Component/ErrorControl";
+import AboutMe from "../Component/AboutMe";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
           path: "/information",
           element: <PrivateRoute><My_Information></My_Information></PrivateRoute>
         },
+        {
+          path: "/aboutme",
+          element: <AboutMe></AboutMe>
+        },
+
         {
           path: "/login",
           element: <Login></Login>

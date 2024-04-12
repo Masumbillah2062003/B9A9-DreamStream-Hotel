@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import profile from "../assets/images/profile.jpg";
+import { CiLogout, CiLogin } from "react-icons/ci";
+import { IoPersonAddOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const { catchUp, logOut } = useContext(AuthContext);
@@ -22,18 +24,32 @@ const Navbar = () => {
         </NavLink>
       </li>
       {catchUp && (
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "text-xl font-semibold underline"
-                : "text-xl font-semibold"
-            }
-            to="/information"
-          >
-            My Information
-          </NavLink>
-        </li>
+        <>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-xl font-semibold underline"
+                  : "text-xl font-semibold"
+              }
+              to="/aboutme"
+            >
+              About Me
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-xl font-semibold underline"
+                  : "text-xl font-semibold"
+              }
+              to="/information"
+            >
+              Profile Info.
+            </NavLink>
+          </li>
+        </>
       )}
     </>
   );
@@ -106,22 +122,28 @@ const Navbar = () => {
                       {catchUp && catchUp.displayName}
                     </li>
                     <li className="btn mt-4 w-full bg-[#023222] hover:bg-[#023222] text-white border-2 border-white rounded-xl font-semibold">
-                      <Link className="text-xl" onClick={handleLogOut}>
-                        Logout
+                      <Link
+                        className="text-xl flex gap-4 items-center"
+                        onClick={handleLogOut}
+                      >
+                        <span>Log Out</span> <CiLogout />
                       </Link>
                     </li>
                     <hr className="border-2 border-[#023222] mt-2" />
                     <li className="text-[#023222] btn  mt-2 visited:bg-transparent text-center text-xl font-semibold bg-transparent hover:bg-transparent">
-                      <Link className="text-xl" to="/login">
-                        Add Account
+                      <Link
+                        className="text-base flex gap-3 items-center"
+                        to="/login"
+                      >
+                        <IoPersonAddOutline /> <span>Add Account</span>
                       </Link>
                     </li>
                   </ul>
                 </div>
               ) : (
                 <button className="btn bg-[#023222] hover:bg-[#023222] text-white border-2 border-white rounded-xl font-semibold">
-                  <Link className="text-xl" to="/login">
-                    Log In
+                  <Link className="text-xl flex items-center gap-2" to="/login">
+                    <span>Log In</span> <CiLogin></CiLogin>
                   </Link>
                 </button>
               )}
