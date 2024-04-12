@@ -45,11 +45,41 @@ const Slider = () => {
               </figure>
             </div>
           </SwiperSlide>
-          <SwiperSlide className="h-[550px]">
+          <SwiperSlide className="h-[550px] relative">
             <img src={slider2} alt="" className="w-full h-[550px]" />
+            <div className="absolute top-0 flex justify-around w-full h-full">
+              <div className="flex flex-col justify-center items-start">
+                <div className="bg-white backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                  <h1 className="text-[#164133] text-6xl font-bold">
+                    A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
+                  </h1>
+                  <button className="btn mt-10 bg-[#023222] hover:bg-[#023222] text-white">
+                    Explore Us
+                  </button>
+                </div>
+              </div>
+              <figure>
+                <img src={offer} alt="" />
+              </figure>
+            </div>
           </SwiperSlide>
-          <SwiperSlide className="h-[550px]">
+          <SwiperSlide className="h-[550px] relative">
             <img src={slider3} alt="" className="w-full h-[550px]" />
+            <div className="absolute top-0 flex justify-around w-full h-full">
+              <div className="flex flex-col justify-center items-start">
+                <div className="bg-white backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                  <h1 className="text-[#164133] text-6xl font-bold">
+                    A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
+                  </h1>
+                  <button className="btn mt-10 bg-[#023222] hover:bg-[#023222] text-white">
+                    Explore Us
+                  </button>
+                </div>
+              </div>
+              <figure>
+                <img src={offer} alt="" />
+              </figure>
+            </div>
           </SwiperSlide>
           ...
         </Swiper>

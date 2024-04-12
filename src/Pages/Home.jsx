@@ -25,7 +25,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[700px] flex justify-center items-center">
+      <div className="w-full lg:h-[700px] h-[900px] flex justify-center items-center">
         <Food></Food>
       </div>
     </div>

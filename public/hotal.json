@@ -74,7 +74,7 @@
 "status": "rent",
 "area": "1800 sq ft",
 "location": "Chicago, IL",
-"facilities": ["business center", "fitness center", "restaurant"],
+"facilities": ["business ", "fitness ", "restaurant"],
 "button": "View Property"
 },
 {
@@ -113,7 +113,7 @@
 "status": "rent",
 "area": "4000 sq ft",
 "location": "Maldives",
-"facilities": ["private beach", "swimming pool", "water sports"],
+"facilities": ["private", "swimming ", "water"],
 "button": "View Property"
 }
 ]

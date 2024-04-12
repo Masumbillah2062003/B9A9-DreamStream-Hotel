@@ -21,18 +21,20 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive }) =>
-            isActive
-              ? "text-xl font-semibold underline"
-              : "text-xl font-semibold"
-          }
-          to="/about"
-        >
-          About
-        </NavLink>
-      </li>
+      {catchUp && (
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "text-xl font-semibold underline"
+                : "text-xl font-semibold"
+            }
+            to="/information"
+          >
+            My Information
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
