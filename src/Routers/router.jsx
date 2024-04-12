@@ -5,6 +5,7 @@ import Register from "../Component/Register";
 import Home from "../Pages/Home";
 import Bed_Details from "../Component/Bed_Details";
 import My_Information from "../Component/My_Information";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/information",
-          element: <My_Information></My_Information>
+          element: <PrivateRoute><My_Information></My_Information></PrivateRoute>
         },
         {
           path: "/login",

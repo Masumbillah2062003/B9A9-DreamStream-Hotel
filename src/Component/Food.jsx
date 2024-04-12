@@ -2,7 +2,7 @@ import food from "../assets/images/hotel-facility-one.jpg"
 
 const Food = () => {
   return (
-    <div className="bg-slate-100 flex flex-col lg:flex-row items-center justify-center lg:p-10 lg:w-[1000px] lg:h-[325px] h-[600px] mx-auto gap-8">
+    <div className="bg-slate-100 flex flex-col lg:flex-row items-center justify-center lg:p-10 lg:w-[1000px] lg:h-[325px] h-[600px] mx-auto gap-8 border-2 border-[#023222]">
       <figure>
         <img src={food} alt="" className="lg:w-[43rem] w-full h-[170px] lg:h-[255px]" />
       </figure>

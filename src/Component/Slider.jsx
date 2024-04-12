@@ -31,7 +31,7 @@ const Slider = () => {
             <img src={slider1} alt="" className="w-full h-[550px]" />
             <div className="absolute top-0 flex justify-around w-full h-full">
               <div className="flex flex-col justify-center items-start">
-                <div className="bg-white backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
                   <h1 className="text-[#164133] text-6xl font-bold">
                     A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
                   </h1>
@@ -49,7 +49,7 @@ const Slider = () => {
             <img src={slider2} alt="" className="w-full h-[550px]" />
             <div className="absolute top-0 flex justify-around w-full h-full">
               <div className="flex flex-col justify-center items-start">
-                <div className="bg-white backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
                   <h1 className="text-[#164133] text-6xl font-bold">
                     A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
                   </h1>
@@ -67,7 +67,7 @@ const Slider = () => {
             <img src={slider3} alt="" className="w-full h-[550px]" />
             <div className="absolute top-0 flex justify-around w-full h-full">
               <div className="flex flex-col justify-center items-start">
-                <div className="bg-white backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
                   <h1 className="text-[#164133] text-6xl font-bold">
                     A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
                   </h1>

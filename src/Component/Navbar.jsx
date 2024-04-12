@@ -100,14 +100,20 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content mt-5 -mr-4 z-[100] p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"
+                    className=" menu-sm dropdown-content mt-5 -mr-4 z-[100] p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"
                   >
                     <li className="text-[#023222] text-center text-xl font-semibold">
                       {catchUp && catchUp.displayName}
                     </li>
-                    <li className="btn mt-4 bg-[#023222] hover:bg-[#023222] text-white border-2 border-white rounded-xl font-semibold">
+                    <li className="btn mt-4 w-full bg-[#023222] hover:bg-[#023222] text-white border-2 border-white rounded-xl font-semibold">
                       <Link className="text-xl" onClick={handleLogOut}>
                         Logout
+                      </Link>
+                    </li>
+                    <hr className="border-2 border-[#023222] mt-2" />
+                    <li className="text-[#023222] btn  mt-2 visited:bg-transparent text-center text-xl font-semibold bg-transparent hover:bg-transparent">
+                      <Link className="text-xl" to="/login">
+                        Add Account
                       </Link>
                     </li>
                   </ul>

@@ -18,22 +18,37 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const handleLogIn = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log(email, password);
+  const handleLogIn = (data) => {
+    // e.preventDefault()
+    // const email = e.target.email.value;
+    // const password = e.target.password.value;
+    // console.log(email, password);
+
+    const { email, password } = data;
+
+    if (password.length < 6) {
+      console.log("password least 6 chraacter or longer");
+      return toast.error("password least 6 chraacter or longer");
+    } else if (!/[A-Z]/.test(password)) {
+      return toast.error(
+        "your password should have at least one upper case characters [[A-Z]]"
+      );
+    } else if (!/[a-z]/.test(password)) {
+      return toast.error(
+        "your password should have at least one Lower case characters [[a-z]]"
+      );
+    }
 
     userLogIn(email, password)
       .then((result) => {
         console.log(result.user);
-        e.target.reset();
+        // e.target.reset();
         navigate("/");
         return toast.success("your log in successfull");
       })
       .catch((error) => {
         console.error(error);
-        return toast.error("your password no match");
+        return toast.error("your email with password no match");
       });
   };
 
@@ -41,9 +56,11 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result);
+        return toast.success("your log in successfull");
       })
       .catch((error) => {
         console.error(error);
+        return toast.error("your password no match");
       });
   };
 

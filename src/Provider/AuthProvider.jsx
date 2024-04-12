@@ -15,6 +15,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const provider = new GoogleAuthProvider();
   const [catchUp, setCatchUp] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   //register create account
   const createSignUp = (email, password) => {
@@ -34,6 +35,7 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("current value of the current user", currentUser);
       setCatchUp(currentUser);
+      setLoading(false)
     });
     return () => {
       unSubscribe();
@@ -45,7 +47,7 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
-  const authInfo = { createSignUp, userLogIn, googleSignIn, catchUp , logOut };
+  const authInfo = { createSignUp, userLogIn, googleSignIn, catchUp , logOut, loading };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
