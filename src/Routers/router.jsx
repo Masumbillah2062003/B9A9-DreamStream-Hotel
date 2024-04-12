@@ -6,12 +6,14 @@ import Home from "../Pages/Home";
 import Bed_Details from "../Component/Bed_Details";
 import My_Information from "../Component/My_Information";
 import PrivateRoute from "./PrivateRoute";
+import ErrorControl from "../Component/ErrorControl";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorControl></ErrorControl>,
       children: [
         {
           path: "/",
