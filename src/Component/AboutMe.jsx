@@ -1,8 +1,22 @@
-import me from "../assets/images/Untitled-e.png"
+import me from "../assets/images/Untitled-e.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutMe = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="container mx-auto mt-12 lg:h-[500px] lg:p-0  p-5">
+    <div
+      className="container mx-auto mt-28 lg:h-[500px] lg:p-0  p-5"
+      data-aos="zoom-in-up"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+    >
       <h1 className="lg:text-6xl text-4xl font-bold text-center">
         About <span className="text-[#1f624c]">Me!</span>
       </h1>

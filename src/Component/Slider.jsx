@@ -11,8 +11,14 @@ import slider1 from "../assets/images/slider-1.jpg";
 import slider2 from "../assets/images/slider-3.jpg";
 import slider3 from "../assets/images/slider-4.jpg";
 import offer from "../assets/images/offer.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Slider = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <div className="hidden lg:block">
@@ -31,7 +37,15 @@ const Slider = () => {
             <img src={slider1} alt="" className="w-full h-[550px]" />
             <div className="absolute top-0 flex justify-around w-full h-full">
               <div className="flex flex-col justify-center items-start">
-                <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
+                <div
+                  className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]"
+                  data-aos="flip-right"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true"
+                >
                   <h1 className="text-[#164133] text-6xl font-bold">
                     A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
                   </h1>

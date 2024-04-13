@@ -4,6 +4,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 import "./style/login.css";
 
@@ -64,10 +67,21 @@ const Login = () => {
       });
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="hero logbg">
-      <div>
-        <div className="text-center ">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+      >
+        <div className="text-center">
           <h1 className="text-5xl font-bold">Log In</h1>
         </div>
         <div className="card mt-9 lg:w-[500px] border-2 border-[#023222] shadow-2xl bg-transparent backdrop-blur-sm">

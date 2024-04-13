@@ -4,6 +4,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import profile from "../assets/images/profile.jpg";
 import { CiLogout, CiLogin } from "react-icons/ci";
 import { IoPersonAddOutline } from "react-icons/io5";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const { catchUp, logOut } = useContext(AuthContext);
@@ -46,11 +49,23 @@ const Navbar = () => {
               }
               to="/information"
             >
-              Profile Info.
+              Update Profile
             </NavLink>
           </li>
         </>
       )}
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-xl font-semibold underline"
+              : "text-xl font-semibold"
+          }
+          to="/map"
+        >
+          Leaflet Map
+        </NavLink>
+      </li>
     </>
   );
 
@@ -61,9 +76,12 @@ const Navbar = () => {
       })
       .catch((error) => console.error(error));
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <nav className="navbar p-0 lg:p-2 bg-[#023222] text-white">
+    <nav className="navbar p-0 lg:p-2 bg-[#023222] text-white fixed z-50 top-0">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -118,7 +136,7 @@ const Navbar = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className=" menu-sm dropdown-content mt-5 -mr-4 z-[100] p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"
+                    className=" menu-sm dropdown-content mt-5 -mr-4 z-50 p-2 shadow bg-base-100 rounded-box w-52 border-2 border-[#023222]"  
                   >
                     <li className="text-[#023222] text-center text-xl font-semibold">
                       {catchUp && catchUp.displayName}
@@ -143,9 +161,7 @@ const Navbar = () => {
                   </ul>
                 </div>
               ) : (
-                <button
-                  className="lg:btn px-2 py-1 hover:bg-[#023222] hover:text-white border-2 border-white rounded-xl font-semibold active:scale-90 duration-300"
-                >
+                <button className="lg:btn px-2 py-1 hover:bg-[#023222] hover:text-white border-2 border-white rounded-xl font-semibold active:scale-90 duration-300">
                   <Link
                     className="lg:text-xl text-sm flex items-center lg:gap-2"
                     to="/login"
