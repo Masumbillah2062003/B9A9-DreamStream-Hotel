@@ -63,7 +63,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar bg-[#023222] text-white">
+    <nav className="navbar p-0 lg:p-2 bg-[#023222] text-white">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -90,7 +90,9 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <Link to="/" className="btn btn-ghost lg:text-3xl text-base">
+            DreamStream Hotel
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className=" menu-horizontal px-1 gap-4">{navLinks}</ul>
@@ -141,9 +143,15 @@ const Navbar = () => {
                   </ul>
                 </div>
               ) : (
-                <button className="btn bg-[#023222] hover:bg-[#023222] text-white border-2 border-white rounded-xl font-semibold">
-                  <Link className="text-xl flex items-center gap-2" to="/login">
-                    <span>Log In</span> <CiLogin></CiLogin>
+                <button
+                  className="lg:btn px-2 py-1 hover:bg-[#023222] hover:text-white border-2 border-white rounded-xl font-semibold active:scale-90 duration-300"
+                >
+                  <Link
+                    className="lg:text-xl text-sm flex items-center lg:gap-2"
+                    to="/login"
+                  >
+                    <span>Log In</span>{" "}
+                    <CiLogin className="hidden lg:block"></CiLogin>
                   </Link>
                 </button>
               )}

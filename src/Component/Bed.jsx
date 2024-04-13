@@ -19,9 +19,9 @@ const Bed = ({ data }) => {
   console.log(data);
 
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <div className="w-80 lg:w-full p-6 rounded-2xl border-2 border-[#023222]  space-y-6">
-        <figure className="bg-[#F3F3F3] lg:w-[440px] w-[270px] lg:h-[220px] h-[150px] rounded-2xl flex justify-center items-center">
+        <figure className="bg-[#F3F3F3] lg:h-[220px] h-[150px] rounded-2xl flex justify-center items-center">
           <img
             src={image}
             alt="comming"
