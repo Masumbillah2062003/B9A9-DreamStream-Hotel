@@ -61,7 +61,12 @@ const Slider = () => {
           </SwiperSlide>
           <SwiperSlide className="h-[550px] relative">
             <img src={slider2} alt="" className="w-full h-[550px]" />
-            <div className="absolute top-0 flex justify-around w-full h-full">
+            <div className="absolute top-0 flex justify-around w-full h-full"  data-aos="flip-right"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true">
               <div className="flex flex-col justify-center items-start">
                 <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
                   <h1 className="text-[#164133] text-6xl font-bold">
@@ -80,12 +85,22 @@ const Slider = () => {
           <SwiperSlide className="h-[550px] relative">
             <img src={slider3} alt="" className="w-full h-[550px]" />
             <div className="absolute top-0 flex justify-around w-full h-full">
-              <div className="flex flex-col justify-center items-start">
+              <div className="flex flex-col justify-center items-start" >
                 <div className="bg-[#ffffff70] backdrop-blur-sm p-6 rounded-lg border-2 border-[#164133]">
-                  <h1 className="text-[#164133] text-6xl font-bold">
+                  <h1 className="text-[#164133] text-6xl font-bold"  data-aos="flip-right"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true">
                     A BRAND NEW HOTEL <br /> BEYOUND ORDINARY
                   </h1>
-                  <button className="btn mt-10 bg-[#023222] hover:bg-[#023222] text-white">
+                  <button className="btn mt-10 bg-[#023222] hover:bg-[#023222] text-white"  data-aos="flip-left"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true">
                     Explore Us
                   </button>
                 </div>

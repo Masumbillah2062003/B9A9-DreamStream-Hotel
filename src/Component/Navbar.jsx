@@ -49,7 +49,7 @@ const Navbar = () => {
               }
               to="/information"
             >
-              Update Profile
+              Profile
             </NavLink>
           </li>
         </>
@@ -152,10 +152,10 @@ const Navbar = () => {
                     <hr className="border-2 border-[#023222] mt-2" />
                     <li className="text-[#023222] btn  mt-2 visited:bg-transparent text-center text-xl font-semibold bg-transparent hover:bg-transparent">
                       <Link
-                        className="text-base flex gap-3 items-center"
+                        className="text-sm flex gap-3 items-center"
                         to="/login"
                       >
-                        <IoPersonAddOutline /> <span>Add Account</span>
+                        <IoPersonAddOutline /> <span>Update Profile</span>
                       </Link>
                     </li>
                   </ul>

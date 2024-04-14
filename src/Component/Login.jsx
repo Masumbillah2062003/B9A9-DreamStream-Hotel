@@ -7,6 +7,9 @@ import { useForm } from "react-hook-form";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import google from "../assets/images/google.png";
+import github from "../assets/images/github.png";
+import facebook from "../assets/images/facebook.png";
 
 import "./style/login.css";
 
@@ -136,12 +139,15 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <div className="text-center">
-            <button
-              onClick={handleGoogleLogIn}
-              className="btn bg-[#023222] hover:bg-[#023222] text-white"
-            >
-              Google
+          <div className="text-center flex justify-center items-center gap-6">
+            <button onClick={handleGoogleLogIn} className="active:scale-90 duration-150 w-12 h-12 rounded-full">
+              <img src={google} alt=""  className="w-full h-full"/>
+            </button>
+            <button className="active:scale-90 w-12 h-12 duration-150">
+              <img src={github} alt="" className="w-full h-full"/>
+            </button>
+            <button className="active:scale-90 w-12 h-12   duration-150">
+              <img src={facebook} alt="" className="w-full h-full"/>
             </button>
           </div>
           <div className="p-4 text-center">

@@ -10,7 +10,7 @@ const My_Information = () => {
     AOS.init();
   }, []);
   return (
-    <div className="flex justify-center items-center lg:h-[650px] h-[300px] gap-6"  data-aos="zoom-in-up"
+    <div className="flex justify-center items-center lg:h-[650px] h-[300px] gap-6" data-aos="zoom-in-up"
     data-aos-offset="200"
     data-aos-delay="50"
     data-aos-duration="1000"

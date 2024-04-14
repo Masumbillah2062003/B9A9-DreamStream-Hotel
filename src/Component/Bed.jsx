@@ -41,28 +41,30 @@ const Bed = ({ data }) => {
             src={image}
             alt="comming"
             className="w-full h-full rounded-2xl"
-          />
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"/>
         </figure>
         <div className="space-y-4 ">
           <div className="flex items-center flex-wrap lg:flex-nowrap gap-3 lg:gap-10 text-[#023222] font-medium">
             {facilities.map((data, idx) => (
               <div key={idx} className="">
-                <p className="bg-[#0232226d] text-[#023222] rounded-[30px] py-2 px-2">
+                <p className="bg-[#0232226d] text-[#023222] rounded-[30px] py-2 px-2" data-aos="fade-down-left">
                   #{data}
                 </p>
               </div>
             ))}
           </div>
-          <h2 className="lg:text-2xl text-xl font-bold">{hotel_title}</h2>
-          <h2 className="lg:text-xl text-lg font-bold">{Speciality_name}</h2>
+          <h2 className="lg:text-2xl text-xl font-bold" data-aos="fade-down-left">{hotel_title}</h2>
+          <h2 className="lg:text-xl text-lg font-bold" data-aos="fade-down-left">{Speciality_name}</h2>
           <p className="font-medium text-[#023222]">
             {" "}
-            <span className="text-2xl">Price : {price}/</span>night
+            <span className="text-2xl" data-aos="fade-down">Price : {price}/</span>night
           </p>
           <div className="flex flex-wrap gap-5 items-center justify-between text-[#023222] font-medium border-t border-dashed">
-            <p>Location : {location}</p>
+            <p data-aos="fade-down">Location : {location}</p>
             <Link to={catchUp ? `/data/${id}` : "/login"}>
-              <button className="btn bg-[#023222] text-white hover:bg-white border-2 hover:border-[#023222] hover:text-[#023222]">
+              <button className="btn bg-[#023222] text-white hover:bg-white border-2 hover:border-[#023222] hover:text-[#023222]" data-aos="fade-down-right">
                 {button}
               </button>
             </Link>
