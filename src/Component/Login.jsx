@@ -14,7 +14,7 @@ import facebook from "../assets/images/facebook.png";
 import "./style/login.css";
 
 const Login = () => {
-  const { userLogIn, googleSignIn } = useContext(AuthContext);
+  const { userLogIn, googleSignIn, gitHubSignIn, facebookSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
 
@@ -62,11 +62,33 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result);
-        return toast.success("your log in successfull");
+        return toast.success("google log in successfull");
       })
       .catch((error) => {
         console.error(error);
-        return toast.error("your password no match");
+        return toast.error("google log in failed");
+      });
+  };
+  const handleGitHubLogIn = () => {
+    gitHubSignIn()
+      .then((result) => {
+        console.log(result);
+        return toast.success("Github log in successfull");
+      })
+      .catch((error) => {
+        console.error(error);
+        return toast.error("Github log in failed");
+      });
+  };
+  const handleFacebookLogIn = () => {
+    facebookSignIn()
+      .then((result) => {
+        console.log(result);
+        return toast.success("Facebook log in successfull");
+      })
+      .catch((error) => {
+        console.error(error);
+        return toast.error("Facebook log in failed");
       });
   };
 
@@ -143,10 +165,10 @@ const Login = () => {
             <button onClick={handleGoogleLogIn} className="active:scale-90 duration-150 w-12 h-12 rounded-full">
               <img src={google} alt=""  className="w-full h-full"/>
             </button>
-            <button className="active:scale-90 w-12 h-12 duration-150">
+            <button onClick={handleGitHubLogIn} className="active:scale-90 w-12 h-12 duration-150">
               <img src={github} alt="" className="w-full h-full"/>
             </button>
-            <button className="active:scale-90 w-12 h-12   duration-150">
+            <button onClick={handleFacebookLogIn} className="active:scale-90 w-12 h-12   duration-150">
               <img src={facebook} alt="" className="w-full h-full"/>
             </button>
           </div>
