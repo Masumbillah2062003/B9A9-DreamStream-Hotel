@@ -28,7 +28,7 @@ const Bed_Details = () => {
   console.log(details);
   console.log(typeof id);
   return (
-    <div className="lg:h-[711px] flex lg:flex-row flex-col gap-12 container mx-auto lg:mt-14 mt-5 mb-14 p-4 lg:p-0">
+    <div className="lg:h-[711px] flex lg:flex-row flex-col gap-12 container mx-auto lg:mt-28 mt-5 mb-14 p-4 lg:p-0">
       <figure className="h-full lg:w-1/2 lg:p-16 flex justify-center items-center rounded-2xl border-2 border-[#023222] p-4">
         <img
           src={image}

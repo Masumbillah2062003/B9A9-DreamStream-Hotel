@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -9,14 +9,20 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import google from "../assets/images/google.png";
 import github from "../assets/images/github.png";
-import facebook from "../assets/images/facebook.png";
+import twitter from "../assets/images/twitter.png";
 
 import "./style/login.css";
 
 const Login = () => {
-  const { userLogIn, googleSignIn, gitHubSignIn, facebookSignIn } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { userLogIn, googleSignIn, gitHubSignIn, twitterSignIn } = useContext(AuthContext);
+
   const [showPass, setShowPass] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location)
+  // console.log('loction in the login page', location)
+
+
 
   const {
     register,
@@ -29,6 +35,8 @@ const Login = () => {
     // const email = e.target.email.value;
     // const password = e.target.password.value;
     // console.log(email, password);
+
+
 
     const { email, password } = data;
 
@@ -47,10 +55,11 @@ const Login = () => {
 
     userLogIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        console.log(result)
+        // console.log(result.user);
         // e.target.reset();
-        navigate("/");
-        return toast.success("your log in successfull");
+        navigate(location?.state ? location.state : "/");
+        toast.success("your log in successfull");
       })
       .catch((error) => {
         console.error(error);
@@ -62,6 +71,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result);
+        navigate(location?.state ? location.state : "/");
         return toast.success("google log in successfull");
       })
       .catch((error) => {
@@ -73,6 +83,7 @@ const Login = () => {
     gitHubSignIn()
       .then((result) => {
         console.log(result);
+        navigate(location?.state ? location.state : "/");
         return toast.success("Github log in successfull");
       })
       .catch((error) => {
@@ -80,15 +91,16 @@ const Login = () => {
         return toast.error("Github log in failed");
       });
   };
-  const handleFacebookLogIn = () => {
-    facebookSignIn()
+  const handletwitterLogIn = () => {
+    twitterSignIn()
       .then((result) => {
         console.log(result);
-        return toast.success("Facebook log in successfull");
+        navigate(location?.state ? location.state : "/");
+        return toast.success("twitter log in successfull");
       })
       .catch((error) => {
         console.error(error);
-        return toast.error("Facebook log in failed");
+        return toast.error("twitter log in failed");
       });
   };
 
@@ -168,8 +180,8 @@ const Login = () => {
             <button onClick={handleGitHubLogIn} className="active:scale-90 w-12 h-12 duration-150">
               <img src={github} alt="" className="w-full h-full"/>
             </button>
-            <button onClick={handleFacebookLogIn} className="active:scale-90 w-12 h-12   duration-150">
-              <img src={facebook} alt="" className="w-full h-full"/>
+            <button onClick={handletwitterLogIn} className="active:scale-90 w-14 h-[2.7rem]   duration-150">
+              <img src={twitter} alt="" className="w-full h-full"/>
             </button>
           </div>
           <div className="p-4 text-center">

@@ -4,7 +4,7 @@ import Login from "../Component/Login";
 import Register from "../Component/Register";
 import Home from "../Pages/Home";
 import Bed_Details from "../Component/Bed_Details";
-import My_Information from "../Component/My_Information";
+import UpdateProfile from "../Component/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import ErrorControl from "../Component/ErrorControl";
 import AboutMe from "../Component/AboutMe";
@@ -24,12 +24,12 @@ const router = createBrowserRouter([
         },
         {
           path:"/data/:id",
-          element: <Bed_Details></Bed_Details>,
+          element: <PrivateRoute><Bed_Details></Bed_Details></PrivateRoute>,
           loader: ()=> fetch("/hotal.json")
         },
         {
-          path: "/information",
-          element: <PrivateRoute><My_Information></My_Information></PrivateRoute>
+          path: "/updateProfile",
+          element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
         },
         {
           path: "/aboutme",

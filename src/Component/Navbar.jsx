@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import profile from "../assets/images/profile.jpg";
 import { CiLogout, CiLogin } from "react-icons/ci";
-import { IoPersonAddOutline } from "react-icons/io5";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -47,9 +46,9 @@ const Navbar = () => {
                   ? "text-xl font-semibold underline"
                   : "text-xl font-semibold"
               }
-              to="/information"
+              to="/updateProfile"
             >
-              Profile
+              Update Profile
             </NavLink>
           </li>
         </>
@@ -63,7 +62,7 @@ const Navbar = () => {
           }
           to="/map"
         >
-          Leaflet Map
+          Map
         </NavLink>
       </li>
     </>
@@ -147,15 +146,6 @@ const Navbar = () => {
                         onClick={handleLogOut}
                       >
                         <span>Log Out</span> <CiLogout />
-                      </Link>
-                    </li>
-                    <hr className="border-2 border-[#023222] mt-2" />
-                    <li className="text-[#023222] btn  mt-2 visited:bg-transparent text-center text-xl font-semibold bg-transparent hover:bg-transparent">
-                      <Link
-                        className="text-sm flex gap-3 items-center"
-                        to="/login"
-                      >
-                        <IoPersonAddOutline /> <span>Update Profile</span>
                       </Link>
                     </li>
                   </ul>

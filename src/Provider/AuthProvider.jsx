@@ -1,9 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import {
-  FacebookAuthProvider,
   GithubAuthProvider,
   GoogleAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -17,9 +17,9 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
-  const facebookProvider = new FacebookAuthProvider();
+  const twitterProvider = new TwitterAuthProvider();
   const [catchUp, setCatchUp] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   //register create account
   const createSignUp = (email, password) => {
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log("current value of the current user", currentUser);
       setCatchUp(currentUser);
-      setLoading(false)
+      setLoading(false);
     });
     return () => {
       unSubscribe();
@@ -55,11 +55,20 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, githubProvider);
   };
   // github account
-  const facebookSignIn = () => {
-    return signInWithPopup(auth, facebookProvider);
+  const twitterSignIn = () => {
+    return signInWithPopup(auth, twitterProvider);
   };
 
-  const authInfo = { createSignUp, userLogIn, googleSignIn, catchUp , logOut, loading, gitHubSignIn, facebookSignIn };
+  const authInfo = {
+    createSignUp,
+    userLogIn,
+    googleSignIn,
+    catchUp,
+    logOut,
+    loading,
+    gitHubSignIn,
+    twitterSignIn,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

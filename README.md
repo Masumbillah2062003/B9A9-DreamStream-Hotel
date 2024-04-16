@@ -20,8 +20,8 @@ Welcome to My Website! My website name is DreamStream Hotel
 
 ## Added implementation packages
 
-- **a.:** AOS Package,
-- **b.:** Animate.css,
-- **c.:** React-leaflet,
-- **d.:** React Hook form,
-- **e.:** Swiper slider
+- **a.** AOS Package,
+- **b.** Animate.css,
+- **c.** React-leaflet,
+- **d.** React Hook form,
+- **e.** Swiper slider

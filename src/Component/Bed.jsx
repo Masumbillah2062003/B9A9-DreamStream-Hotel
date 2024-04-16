@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const Bed = ({ data }) => {
-  const { catchUp } = useContext(AuthContext);
   const {
     image,
     hotel_title,
@@ -63,7 +60,7 @@ const Bed = ({ data }) => {
           </p>
           <div className="flex flex-wrap gap-5 items-center justify-between text-[#023222] font-medium border-t border-dashed">
             <p data-aos="fade-down">Location : {location}</p>
-            <Link to={catchUp ? `/data/${id}` : "/login"}>
+            <Link to={`/data/${id}`}>
               <button className="btn bg-[#023222] text-white hover:bg-white border-2 hover:border-[#023222] hover:text-[#023222]" data-aos="fade-down-right">
                 {button}
               </button>
