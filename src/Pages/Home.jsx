@@ -13,7 +13,7 @@ const Home = () => {
   console.log(allData);
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="bg"></div>
       <div className="bg-slate-100 pb-12">
         <Slider></Slider>

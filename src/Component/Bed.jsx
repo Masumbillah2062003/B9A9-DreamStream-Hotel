@@ -32,7 +32,7 @@ const Bed = ({ data }) => {
       data-aos-easing="ease-in-out"
       data-aos-mirror="true"
     >
-      <div className="w-80 lg:w-full p-6 rounded-2xl border-2 border-[#023222]  space-y-6">
+      <div className="w-full p-6 rounded-2xl border-2 border-[#023222]  space-y-6">
         <figure className="bg-[#F3F3F3] lg:h-[220px] h-[150px] rounded-2xl flex justify-center items-center">
           <img
             src={image}
@@ -43,7 +43,7 @@ const Bed = ({ data }) => {
             data-aos-duration="2000"/>
         </figure>
         <div className="space-y-4 ">
-          <div className="flex items-center flex-wrap lg:flex-nowrap gap-3 lg:gap-10 text-[#023222] font-medium">
+          <div className="flex items-center flex-wrap gap-3 lg:gap-10 text-[#023222] font-medium">
             {facilities.map((data, idx) => (
               <div key={idx} className="">
                 <p className="bg-[#0232226d] text-[#023222] rounded-[30px] py-2 px-2" data-aos="fade-down-left">

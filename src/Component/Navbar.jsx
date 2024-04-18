@@ -80,7 +80,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar p-0 lg:p-2 bg-[#023222] text-white fixed z-50 top-0">
+    <nav className="navbar p-0 container mx-auto lg:fixed lg:z-50 lg:p-2 bg-[#023222] text-white top-0">
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
