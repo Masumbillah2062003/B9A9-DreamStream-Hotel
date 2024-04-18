@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
   const twitterProvider = new TwitterAuthProvider();
   const [catchUp, setCatchUp] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [fatching, setFatching] = useState(false)
 
   //register create account
   const createSignUp = (email, password) => {
@@ -40,11 +41,12 @@ const AuthProvider = ({ children }) => {
       console.log("current value of the current user", currentUser);
       setCatchUp(currentUser);
       setLoading(false);
+
     });
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [fatching]);
 
   // google account
   const googleSignIn = () => {
@@ -68,6 +70,7 @@ const AuthProvider = ({ children }) => {
     loading,
     gitHubSignIn,
     twitterSignIn,
+    setFatching
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

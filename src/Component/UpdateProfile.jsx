@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdateProfile = () => {
-  const { catchUp } = useContext(AuthContext);
+  const { catchUp, setFatching } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -20,6 +20,9 @@ const UpdateProfile = () => {
     updateProfile(catchUp, {
       displayName: name,
       photoURL: photoUrl,
+    })
+    .then(()=> {
+      setFatching(true)
     })
     return toast.success("your update profile successfull ");
   };

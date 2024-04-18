@@ -14,7 +14,7 @@ import twitter from "../assets/images/twitter.png";
 import "./style/login.css";
 
 const Login = () => {
-  const { userLogIn, googleSignIn, gitHubSignIn, twitterSignIn } = useContext(AuthContext);
+  const { userLogIn, googleSignIn, gitHubSignIn, twitterSignIn, loading } = useContext(AuthContext);
 
   const [showPass, setShowPass] = useState(false);
   const location = useLocation();
@@ -107,6 +107,21 @@ const Login = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+
+  if (loading) {
+    return (
+      <div className="w-full h-[550px] flex justify-center items-center">
+        <h1 className="text-5xl font-semibold">
+          Loading <span className="loading loading-ball loading-xs"></span>
+          <span className="loading loading-ball loading-sm"></span>
+          <span className="loading loading-ball loading-md"></span>
+          <span className="loading loading-ball loading-lg"></span>
+        </h1>
+      </div>
+    );
+  } 
+
 
   return (
     <div className="hero logbg">

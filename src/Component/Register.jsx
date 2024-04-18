@@ -10,8 +10,10 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const Register = () => {
-  const { createSignUp } = useContext(AuthContext);
+  const { createSignUp, setFatching, loading } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+
+
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -40,7 +42,10 @@ const Register = () => {
         updateProfile(result.user, {
           displayName: name,
           photoURL: photoUrl,
-        });
+        })
+        .then(()=> {
+          setFatching(true)
+        })
       })
       .catch((error) => {
         console.error(error);
@@ -51,6 +56,20 @@ const Register = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+
+  if (loading) {
+    return (
+      <div className="w-full h-[550px] flex justify-center items-center">
+        <h1 className="text-5xl font-semibold">
+          Loading <span className="loading loading-ball loading-xs"></span>
+          <span className="loading loading-ball loading-sm"></span>
+          <span className="loading loading-ball loading-md"></span>
+          <span className="loading loading-ball loading-lg"></span>
+        </h1>
+      </div>
+    );
+  } 
   return (
     <div>
       <div className="hero logbg">
