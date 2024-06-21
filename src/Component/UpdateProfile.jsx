@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
@@ -15,15 +14,14 @@ const UpdateProfile = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const photoUrl = e.target.photourl.value;
-    console.log(name,  photoUrl);
+    console.log(name, photoUrl);
 
     updateProfile(catchUp, {
       displayName: name,
       photoURL: photoUrl,
-    })
-    .then(()=> {
-      setFatching(true)
-    })
+    }).then(() => {
+      setFatching(true);
+    });
     return toast.success("your update profile successfull ");
   };
   useEffect(() => {
@@ -97,3 +95,4 @@ const UpdateProfile = () => {
 };
 
 export default UpdateProfile;
+

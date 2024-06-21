@@ -2,7 +2,7 @@
 Welcome to My Website! My website name is DreamStream Hotel
 
 ## Live Site URL
-[https://6606e39af4b89b1a7c637bad--stellar-jalebi-22c52f.netlify.app/](https://6606e39af4b89b1a7c637bad--stellar-jalebi-22c52f.netlify.app/)
+[https://b9a9-assignment-project.web.app/](https://b9a9-assignment-project.web.app/)
 
 
 ## Features and Characteristics
